@@ -1,7 +1,9 @@
 #ifndef NODE_H
 #define NODE_H
 
-#include "Node.h"
+#include <iostream>
+
+
 
 class Node {
     private: 
@@ -10,14 +12,16 @@ class Node {
         Node *left;
         
     public:
-        Node(int v, Node r = Null, Node l = Null);
-        Node(const Node &N);
+        Node(int v, Node *r = NULL, Node *l = NULL);
+        Node(Node *N);
         ~Node();
 
         void setValue(int value);
         int getValue();
-        Node getR();
-        Node getL();
+        Node* getR();
+        Node* getL();
+        void setR(Node *R);
+        void setL(Node *L);
 };
 
 #endif
